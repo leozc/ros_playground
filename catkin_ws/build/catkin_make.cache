@@ -1,2 +1,2 @@
-
+ros_basics_tutorials
 -DCATKIN_DEVEL_PREFIX=/home/leozc/code/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/leozc/code/catkin_ws/install -G Unix Makefiles
