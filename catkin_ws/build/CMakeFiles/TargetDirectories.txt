@@ -35,12 +35,15 @@
 /home/leozc/code/catkin_ws/build/gtest/googlemock/gtest/CMakeFiles/list_install_components.dir
 /home/leozc/code/catkin_ws/build/gtest/googlemock/gtest/CMakeFiles/gtest.dir
 /home/leozc/code/catkin_ws/build/gtest/googlemock/gtest/CMakeFiles/rebuild_cache.dir
-/home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/install/strip.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/install/local.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/rebuild_cache.dir
+/home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/test.dir
+/home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/listener_ros_node.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/list_install_components.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_py.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_eus.dir
+/home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/install/strip.dir
+/home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/talker_ros_node.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/edit_cache.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
@@ -56,4 +59,3 @@
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir
-/home/leozc/code/catkin_ws/build/ros_basics_tutorials/CMakeFiles/test.dir

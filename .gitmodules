@@ -1,0 +1,3 @@
+[submodule "ros_essentials_cpp"]
+	path = ros_essentials_cpp
+	url = https://github.com/aniskoubaa/ros_essentials_cpp.git

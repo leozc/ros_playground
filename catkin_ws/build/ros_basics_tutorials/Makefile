@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/leozc/code/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -91,6 +79,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -100,6 +99,18 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -123,17 +134,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/rule:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/rule
+.PHONY : ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/rule
+
+# Convenience name for target.
+listener_ros_node: ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/rule
+
+.PHONY : listener_ros_node
+
+# fast build rule for target.
+listener_ros_node/fast:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/build.make ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/build
+.PHONY : listener_ros_node/fast
+
+# Convenience name for target.
 ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_py.dir/rule:
 	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_py.dir/rule
@@ -196,6 +211,21 @@ roscpp_generate_messages_eus: ros_basics_tutorials/CMakeFiles/roscpp_generate_me
 roscpp_generate_messages_eus/fast:
 	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_eus.dir/build.make ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/rule:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/rule
+.PHONY : ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/rule
+
+# Convenience name for target.
+talker_ros_node: ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/rule
+
+.PHONY : talker_ros_node
+
+# fast build rule for target.
+talker_ros_node/fast:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/build.make ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/build
+.PHONY : talker_ros_node/fast
 
 # Convenience name for target.
 ros_basics_tutorials/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
@@ -392,18 +422,75 @@ std_msgs_generate_messages_py/fast:
 	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/build.make ros_basics_tutorials/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+src/listener.o: src/listener.cpp.o
+
+.PHONY : src/listener.o
+
+# target to build an object file
+src/listener.cpp.o:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/build.make ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/src/listener.cpp.o
+.PHONY : src/listener.cpp.o
+
+src/listener.i: src/listener.cpp.i
+
+.PHONY : src/listener.i
+
+# target to preprocess a source file
+src/listener.cpp.i:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/build.make ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/src/listener.cpp.i
+.PHONY : src/listener.cpp.i
+
+src/listener.s: src/listener.cpp.s
+
+.PHONY : src/listener.s
+
+# target to generate assembly for a file
+src/listener.cpp.s:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/build.make ros_basics_tutorials/CMakeFiles/listener_ros_node.dir/src/listener.cpp.s
+.PHONY : src/listener.cpp.s
+
+src/talker.o: src/talker.cpp.o
+
+.PHONY : src/talker.o
+
+# target to build an object file
+src/talker.cpp.o:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/build.make ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/src/talker.cpp.o
+.PHONY : src/talker.cpp.o
+
+src/talker.i: src/talker.cpp.i
+
+.PHONY : src/talker.i
+
+# target to preprocess a source file
+src/talker.cpp.i:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/build.make ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/src/talker.cpp.i
+.PHONY : src/talker.cpp.i
+
+src/talker.s: src/talker.cpp.s
+
+.PHONY : src/talker.s
+
+# target to generate assembly for a file
+src/talker.cpp.s:
+	cd /home/leozc/code/catkin_ws/build && $(MAKE) -f ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/build.make ros_basics_tutorials/CMakeFiles/talker_ros_node.dir/src/talker.cpp.s
+.PHONY : src/talker.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... listener_ros_node"
 	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
+	@echo "... install/strip"
+	@echo "... talker_ros_node"
 	@echo "... edit_cache"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
@@ -419,7 +506,12 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... test"
+	@echo "... src/listener.o"
+	@echo "... src/listener.i"
+	@echo "... src/listener.s"
+	@echo "... src/talker.o"
+	@echo "... src/talker.i"
+	@echo "... src/talker.s"
 .PHONY : help
 
 
